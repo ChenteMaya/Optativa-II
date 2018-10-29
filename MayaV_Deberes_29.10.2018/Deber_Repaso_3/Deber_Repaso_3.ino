@@ -29,26 +29,32 @@ void loop() {
     digitalWrite(led1, HIGH);
     lcd.setCursor(0,1);
     lcd.print("led 1");
-    delay(10000);
+  }
+  if(cont==30){
     digitalWrite(led1, LOW);
     lcd.clear();
     }
   if(cont == 25){
     digitalWrite(led2, HIGH);
-    lcd.setCursor(0,1);
+    lcd.setCursor(6,1);
     lcd.print("led 2");
-    delay(15000);
+  }
+  if(cont ==40){
     digitalWrite(led2, LOW);
     lcd.clear();
     }
   if(cont == 30){
     digitalWrite(led3, HIGH);
-    lcd.setCursor(0,1);
+    lcd.setCursor(12,1);
     lcd.print("led 3");
-    delay(5000);
+    }
+  if(cont==35){
     digitalWrite(led3, LOW);
     lcd.clear();
-
+if(cont==60){
+  cont =0;
+  lcd.clear();
+  }
   }
 }
 
@@ -70,6 +76,8 @@ void contador(){
   if(on==1){
   cont++;
   lcd.setCursor(0,0);
+  lcd.print("TIEMPO:");
+  lcd.setCursor(8,0);
   lcd.print(cont);
   }
 }
