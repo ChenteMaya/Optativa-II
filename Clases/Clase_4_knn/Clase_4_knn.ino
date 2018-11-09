@@ -2,8 +2,11 @@
 #include"datos_test.h"
 int col=0;
 int row=0;
-float distancia;
+float distancia1;
+float distancia2;
+float distancia3;
 float distancia_menor=1000;
+int analisis=25;
 
 void setup() {
   Serial.begin(115200);
@@ -23,12 +26,23 @@ void loop() {
 
 for(;row<120;row++){
    
-      distancia=sqrt( pow((matriz[row][0]-prueba[25][0]),2)+
-                      pow((matriz[row][1]-prueba[25][1]),2)+
-                      pow((matriz[row][2]-prueba[25][2]),2)+
-                      pow((matriz[row][3]-prueba[25][3]),2));
-      if(distancia<distancia_menor){
-        distancia_menor=distancia;
+      distancia1=sqrt( pow((matriz[row][0]-prueba[analisis][0]),2)+
+                      pow((matriz[row][1]-prueba[analisis][1]),2)+
+                      pow((matriz[row][2]-prueba[analisis][2]),2)+
+                      pow((matriz[row][3]-prueba[analisis][3]),2));
+                      
+      distancia2=sqrt( pow((matriz[row][0]-prueba[analisis][0]),2)+
+                      pow((matriz[row][1]-prueba[analisis][1]),2)+
+                      pow((matriz[row][2]-prueba[analisis][2]),2)+
+                      pow((matriz[row][3]-prueba[analisis][3]),2));
+                      
+      distancia3=sqrt( pow((matriz[row][0]-prueba[analisis][0]),2)+
+                      pow((matriz[row][1]-prueba[analisis][1]),2)+
+                      pow((matriz[row][2]-prueba[analisis][2]),2)+
+                      pow((matriz[row][3]-prueba[analisis][3]),2));
+                      
+      if(distancia1<distancia_menor){
+        distancia_menor=distancia1;
        // Serial.println(distancia_menor);
         Serial.println(matriz[row][4]);
             }
@@ -38,5 +52,9 @@ for(;row<120;row++){
 // 
    
       }
+      Serial.println("distancia2");
+      Serial.println(distancia2);
+      Serial.println("distancia3");
+      Serial.println(distancia3);
    
           } 
